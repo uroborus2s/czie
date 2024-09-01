@@ -1,0 +1,53 @@
+FROM node:20-buster-slim as builder
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+RUN npm install -g turbo pnpm
+RUN pnpm config set registry https://registry.npmjs.org
+
+FROM builder as prebuilder
+
+ARG PACKAGE_NAME
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+WORKDIR /usr/app
+
+COPY . .
+
+RUN turbo prune --scope="${PACKAGE_NAME}" --docker
+
+WORKDIR /usr/app/out/json
+
+RUN pnpm store clean
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm fetch \
+    && ls -la /pnpm/store && echo "Listing of /pnpm/store completed"
+
+WORKDIR /usr/app/out/full
+
+RUN cp /usr/app/tsconfig.json ./tsconfig.json
+RUN cp /usr/app/out/json/pnpm-lock.yaml ./pnpm-lock.yaml
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile --offline --silent
+
+RUN turbo run build --filter ${PACKAGE_NAME}
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm --filter ${PACKAGE_NAME} --prod deploy webapp
+
+FROM node:20-buster-slim AS runner
+
+ENV NODE_ENV=production
+
+RUN apt-get update && apt-get install -y curl
+
+COPY --from=prebuilder /usr/app/out/full/webapp/package.json /usr/app/package.json
+COPY --from=prebuilder /usr/app/out/full/webapp/dist/ /usr/app/dist/
+COPY --from=prebuilder /usr/app/out/full/webapp/node_modules/ /usr/app/node_modules/
+EXPOSE 8000
+
+ENTRYPOINT ["node", "/usr/app/dist/node/index.js"]

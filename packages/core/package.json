@@ -1,0 +1,49 @@
+{
+  "name": "@wps/core",
+  "version": "1.0.0",
+  "description": "core",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --config .prettierrc src/**/*.ts --write",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@koa/bodyparser": "^5.0.0",
+    "@koa/cors": "^4.0.0",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.7",
+    "depd": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.14.2",
+    "koa-body": ">=6.0.1",
+    "koa-compose": "^4.1.0",
+    "koa-compress": "^5.1.1",
+    "koa-helmet": "^7.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-sslify": ">=5.0.1",
+    "koa-static": ">=5.0.0",
+    "koa-useragent": ">=4.1.0",
+    "lodash": "^4.17.21",
+    "pinyin": "3.1.0",
+    "statuses": "^2.0.1",
+    "xml2js": "^0.6.0"
+  },
+  "peerDependencies": {
+    "@koa/router": ">=12.0.0",
+    "axios": ">=1.4.0",
+    "redis": ">=4.6.7",
+    "winston": ">=3.9.0"
+  },
+  "peerDependenciesMeta": {},
+  "engines": {
+    "node": ">=16.18.1"
+  }
+}

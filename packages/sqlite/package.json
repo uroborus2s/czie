@@ -1,0 +1,23 @@
+{
+  "name": "@wps/sqlite",
+  "version": "1.0.0",
+  "description": "core",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --config .prettierrc src/**/*.ts --write",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "sqlite": ">=5.0.1",
+    "sqlite3": ">=5.1.6"
+  },
+  "engines": {
+    "node": ">=16.18.1"
+  }
+}

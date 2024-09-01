@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Body>
+        <saml1p:Response InResponseTo="abfbf9fb-ed85-4e01-a02c-26e6de7e055d" IssueInstant="2023-12-18T01:26:33.552Z"
+                         MajorVersion="1" MinorVersion="1" ResponseID="_d6b558caf7737e74e79de2d8b6821d52"
+                         xmlns:saml1p="urn:oasis:names:tc:SAML:1.0:protocol">
+            <saml1p:Status>
+                <saml1p:StatusCode Value="saml1p:Success"/>
+            </saml1p:Status>
+            <saml1:Assertion AssertionID="_b8d9cf3c1c02774366a53931c43efaa0" IssueInstant="2023-12-18T01:26:33.552Z"
+                             Issuer="localhost" MajorVersion="1" MinorVersion="1"
+                             xmlns:saml1="urn:oasis:names:tc:SAML:1.0:assertion">
+                <saml1:Conditions NotBefore="2023-12-18T01:26:33.552Z" NotOnOrAfter="2023-12-18T01:27:03.552Z">
+                    <saml1:AudienceRestrictionCondition>
+                        <saml1:Audience>https://wps.cust.edu.cn/authorize?state=162e3322a11e42c0b89719daf3c1da41
+                        </saml1:Audience>
+                    </saml1:AudienceRestrictionCondition>
+                </saml1:Conditions>
+                <saml1:AuthenticationStatement AuthenticationInstant="2023-12-18T00:38:17.688Z"
+                                               AuthenticationMethod="urn:oasis:names:tc:SAML:1.0:am:unspecified">
+                    <saml1:Subject>
+                        <saml1:NameIdentifier>1997800033</saml1:NameIdentifier>
+                        <saml1:SubjectConfirmation>
+                            <saml1:ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:artifact</saml1:ConfirmationMethod>
+                        </saml1:SubjectConfirmation>
+                    </saml1:Subject>
+                </saml1:AuthenticationStatement>
+                <saml1:AttributeStatement>
+                    <saml1:Subject>
+                        <saml1:NameIdentifier>1997800033</saml1:NameIdentifier>
+                        <saml1:SubjectConfirmation>
+                            <saml1:ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:artifact</saml1:ConfirmationMethod>
+                        </saml1:SubjectConfirmation>
+                    </saml1:Subject>
+                    <saml1:Attribute AttributeName="gh" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>85582211</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="idType" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>身份证</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="gj" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>中华人民共和国</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="orgPath" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>长春理工大学/信息化中心/信息化中心用户服务部</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="mail" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>dq@cust.edu.cn</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="sex" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>男</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="birth" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>1973-04-02</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="zwmc" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>信息化中心用户服务部主任</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="cn" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>丁强</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="zwjb" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>正科级</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="mz" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>汉族</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="sj" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>13578965056</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="zzmm" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>中共党员</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="sn" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>丁</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="memberOf" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>cn=JZG,ou=Groups,dc=cust,dc=edu,dc=cn</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="id" AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>220104197304020953</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="cardNumber"
+                                     AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>1997800033</saml1:AttributeValue>
+                    </saml1:Attribute>
+                    <saml1:Attribute AttributeName="expirationDate"
+                                     AttributeNamespace="http://www.ja-sig.org/products/cas/">
+                        <saml1:AttributeValue>-1</saml1:AttributeValue>
+                    </saml1:Attribute>
+                </saml1:AttributeStatement>
+            </saml1:Assertion>
+        </saml1p:Response>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

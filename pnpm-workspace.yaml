@@ -1,0 +1,6 @@
+packages:
+  - 'archive/**'
+  - 'project/**'
+  - 'packages/**'
+  - 'mock'
+  - 'script/**'

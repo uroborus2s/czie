@@ -1,0 +1,23 @@
+{
+  "name": "@wps/types-context",
+  "version": "1.0.0",
+  "description": "core",
+  "main": "dist/index.d.ts",
+  "module": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --config .prettierrc src/**/*.ts --write",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^1.4.0",
+    "winston": "^3.9.0"
+  },
+  "engines": {
+    "node": ">=16.18.1"
+  }
+}

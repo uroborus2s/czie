@@ -1,0 +1,26 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "exclude": ["node_modules/", "dist/", "build/", "*/.*/"],
+  "compilerOptions": {
+    "incremental": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "isolatedModules": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noEmit": false,
+    "resolveJsonModule": false,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noStrictGenericChecks": false,
+    "skipLibCheck": true
+  },
+  "compileOnSave": true,
+  "ts-node": {
+    "files": true
+  }
+}

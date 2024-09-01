@@ -1,0 +1,23 @@
+{
+  "name": "@wps/build-cli",
+  "version": "1.0.0-alpha",
+  "description": "用于同步的cli命令",
+  "bin": {
+    "wbnc-cli": "bin/cmd.mjs",
+    "create-nc-app": "bin/create-project.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "figures": "^5.0.0",
+    "inquirer": "^9.2.7",
+    "ora": "^6.3.1",
+    "yargs": "^17.7.2",
+    "zx": "^7.2.3",
+    "dayjs": "^1.11.7"
+  }
+}

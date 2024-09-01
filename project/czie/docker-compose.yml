@@ -1,0 +1,71 @@
+version: '3.8'
+# 自定义网络
+networks:
+  # 网络名字
+  wps_net:
+    # 由网关驱动
+    driver: bridge
+services:
+  redis:
+    image: 'registry.cn-hangzhou.aliyuncs.com/whzhhub/redis:alpine'
+    container_name: 'redis'
+    restart: 'always'
+    environment:
+      - TZ
+    volumes:
+      - ./conf/redis/redis.conf:/etc/redis/redis.conf:ro
+    command: redis-server /etc/redis/redis.conf
+    ports:
+      - '6379:6379'
+    networks:
+      # 设置网络
+      - wps_net
+  web:
+    image: 'registry.cn-hangzhou.aliyuncs.com/uroborus/${PRO_NAME}:latest'
+    container_name: 'account-sync'
+    restart: 'always'
+    ports:
+      - '80:8000'
+      - '443:8443'
+    volumes:
+      - ./public:/usr/app/dist/public:ro
+      - ./users.db:/usr/app/users.db
+      - ./depts.db:/usr/app/depts.db
+    environment:
+      - TZ
+      - PORT
+      - APPID
+      - APPKEY
+      - WPS_URL
+      - LOCAL_URL
+      - CAS_SERVICE
+      - REDIS_URL
+      - NODE_ENV
+      - SSO_APP_ID
+      - LOCAL_ACCOUNT
+      - KOA_PORT
+      - LOCAL_DEPTS
+      - WPS_NO_ADD_USER
+      - WPS_NO_ADD_DEPT
+    depends_on:
+      - redis
+    networks:
+      # 设置网络
+      - wps_net
+#  nginx:
+#    image: 'nginx'
+#    container_name: 'nginx'
+#    restart: 'always'
+#    ports:
+#      - '80:80'
+#    privileged: true
+#    volumes:
+#      - /etc/localtime:/etc/localtime:ro
+#      - ./conf/nginx/log/:/var/log/nginx
+#      # 注意：如下挂载都是覆盖
+#      - ./conf/nginx/conf.d:/etc/nginx/conf.d
+#      - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+#      - ./conf/nginx/html:/usr/share/nginx/html
+#    networks:
+#      # 设置网络
+#      - wps_net

@@ -1,0 +1,32 @@
+{
+	"name": "@wps/czie",
+	"version": "1.0.0",
+	"description": "常州工程大学wps365账号同步服务",
+	"main": "dist/node/index.js",
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint src/**/*.ts --fix",
+		"test": "jest --coverage",
+		"format": "prettier --config .prettierrc src/**/*.ts --write",
+		"start": "node ./dist/node/index.js",
+		"dev": "nodemon --watch ../core/dist --watch src --watch .env.local -e ts,json,js,env --exec 'cross-env NODE_ENV=development ts-node src/index.ts'"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@koa/router": "^12.0.0",
+		"@wps/core": "workspace:*",
+		"axios": "^1.4.0",
+		"dayjs": "^1.11.7",
+		"dotenv": "^16.0.3",
+		"redis": "^4.6.7",
+		"winston": "^3.9.0",
+		"node-schedule": "^2.1.1",
+		"@wps/sqlite": "workspace:*",
+		"sqlite": "^5.0.1",
+		"sqlite3": "^5.1.6",
+		"@wps/wpssync": "workspace:*"
+	},
+	"engines": {
+		"node": ">=16.18.1"
+	}
+}
